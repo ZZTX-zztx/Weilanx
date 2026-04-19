@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秒存网盘</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 登录页面 -->
+    <div class="login-page" id="loginPage">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>☁️ 秒存网盘</h1>
+                <p>安全存储您的文件，随时随地访问</p>
+            </div>
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="login-username">邮箱/手机号</label>
+                    <input type="text" id="login-username" placeholder="请输入邮箱或手机号" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密码</label>
+                    <input type="password" id="login-password" placeholder="请输入密码" required>
+                </div>
+                <div class="form-actions">
+                    <button id="login-btn" class="btn btn-primary">登录</button>
+                    <button id="register-btn" class="btn btn-secondary">注册</button>
+                </div>
+                <div class="form-links">
+                    <a href="#" id="forgot-password">忘记密码？</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 注册页面 -->
+    <div class="register-page" id="registerPage" style="display: none;">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>☁️ 秒存网盘</h1>
+                <p>创建新账户</p>
+            </div>
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="register-username">邮箱/手机号</label>
+                    <input type="text" id="register-username" placeholder="请输入邮箱或手机号" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密码</label>
+                    <input type="password" id="register-password" placeholder="请输入密码（至少6位）" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">确认密码</label>
+                    <input type="password" id="register-confirm-password" placeholder="请再次输入密码" required>
+                </div>
+                <div class="form-actions">
+                    <button id="register-submit-btn" class="btn btn-primary">注册</button>
+                    <button id="back-to-login" class="btn btn-secondary">返回登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 网盘主页面 -->
+    <div class="cloud-drive" id="cloudDrive" style="display: none;">
+        <header class="header">
+            <h1>☁️ 个人网盘</h1>
+            <div class="header-actions">
+                <div class="user-info" id="userInfo">
+                    <span id="username-display">用户</span>
+                    <button id="export-btn" class="btn btn-secondary">导出数据</button>
+                    <input type="file" id="import-file" accept=".json" style="display: none;">
+                    <button id="import-btn" class="btn btn-secondary">导入数据</button>
+                    <button id="logout-btn" class="btn btn-secondary">退出登录</button>
+                </div>
+                <button id="upload-btn" class="btn btn-primary">上传文件</button>
+                <input type="file" id="file-input" multiple style="display: none;">
+                <button id="refresh-btn" class="btn btn-secondary">刷新</button>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <div class="storage-info">
+                <div class="storage-bar">
+                    <div class="storage-used" id="storage-used"></div>
+                </div>
+                <div class="storage-text" id="storage-text">已用: 0 MB / 总: 512 MB</div>
+            </div>
+            
+            <div class="file-controls">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="搜索文件...">
+                    <button id="search-btn" class="btn btn-secondary">搜索</button>
+                </div>
+                <div class="view-options">
+                    <button id="list-view-btn" class="btn btn-secondary active">列表</button>
+                    <button id="grid-view-btn" class="btn btn-secondary">网格</button>
+                </div>
+            </div>
+            
+            <div class="file-list" id="file-list">
+                <!-- 文件列表将通过JavaScript动态生成 -->
+                <div class="empty-state">
+                    <p>📁 暂无文件</p>
+                    <p>点击上传按钮添加文件</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>© 2026 个人网盘 - 安全存储您的文件</p>
+        </footer>
+    </div>
+    
+    <script src="login.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
